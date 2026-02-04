@@ -1,0 +1,45 @@
+@hw_1_HostAddress = http://localhost:5097
+
+GET {{hw_1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+### 
+
+GET {{hw1_HostAddress}}/api/v1/customers
+Accept: application/json
+
+### 
+
+GET {{hw1_HostAddress}}/api/v1/customers/1
+Accept: application/json
+
+###
+
+GET {{hw1_HostAddress}}/api/v1/customers/after2000
+Accept: application/json
+
+###
+
+POST {{hw1_HostAddress}}/api/v1/customers
+Content-Type: application/json
+
+{
+  "name": "Ivan",
+  "birthDate": "2003-04-12"
+}
+
+###
+
+PUT {{hw1_HostAddress}}/api/v1/customers/1
+Content-Type: application/json
+
+{
+  "name": "Anna Updated",
+  "birthDate": "1999-05-10"
+}
+
+###
+
+DELETE {{hw1_HostAddress}}/api/v1/customers/2
+
+###

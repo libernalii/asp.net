@@ -1,0 +1,39 @@
+@hw_2_HostAddress = http://localhost:5068
+
+###
+
+GET {{hw_2_HostAddress}}/api/books
+Accept: application/json
+
+###
+
+GET {{hw_2_HostAddress}}/api/books/1
+Accept: application/json
+
+###
+
+POST {{hw_2_HostAddress}}/api/books
+Content-Type: application/json
+
+{
+  "title": "Гаррі Поттер",
+  "year": 1997,
+  "author": "Дж. К. Роулінг",
+  "description": "Фентезі книга про магію"
+}
+
+###
+
+PUT {{hw_2_HostAddress}}/api/books/1
+Content-Type: application/json
+
+{
+  "title": "Гаррі Поттер (оновлено)",
+  "year": 1998,
+  "author": "Дж. К. Роулінг",
+  "description": "Оновлений опис книги"
+}
+
+###
+
+DELETE {{hw_2_HostAddress}}/api/books/1

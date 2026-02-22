@@ -1,3 +1,4 @@
+using SubscriptionAPI.Middlewares;
 using SubscriptionAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -18,6 +19,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseMiddleware<TimeCountMiddleware>();
+app.UseMiddleware<MessageMiddleware>();
 
 // Configure the HTTP request pipeline.
 

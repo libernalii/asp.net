@@ -1,0 +1,11 @@
+﻿@using TarasMessenger.Core.Models.Messages
+
+<div class="message">
+    <div class="content">@Message.Text</div>
+    <div class="sender">@(Message.User?.Email ?? "test")</div>
+    <div class="date">@Message.SendAt.ToShortTimeString()</div>
+</div>
+
+@code {
+    [Parameter] public TextMessage Message { get; set; }
+}

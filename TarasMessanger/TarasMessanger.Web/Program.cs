@@ -5,6 +5,7 @@ using TarasMessanger.Storage;
 using TarasMessanger.Web.Components;
 using TarasMessanger.Web.Components.Account;
 using TarasMessanger.Web.Data;
+using TarasMessanger.Web.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -31,6 +32,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 var sqlServerConnection = builder.Configuration.GetConnectionString("SqlServer") ??
                        throw new InvalidOperationException("Connection string 'SqlServer' not found.");
 builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(sqlServerConnection));
+
+builder.Services.AddTransient<MessageService>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 

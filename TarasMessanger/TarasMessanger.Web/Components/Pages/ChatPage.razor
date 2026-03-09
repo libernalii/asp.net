@@ -1,6 +1,81 @@
 ﻿@page "/chat"
+@using Microsoft.AspNetCore.Identity
+@using TarasMessanger.Web.Components.Account
+@using TarasMessanger.Web.Components.UIComponents.Messages
+@using TarasMessanger.Web.Data
+@using TarasMessanger.Web.Services
+@using TarasMessenger.Core.Models
+@using TarasMessenger.Core.Models.Messages
+@inject UserManager<ApplicationUser> UserManager
+@inject IdentityRedirectManager RedirectManager
+@inject MessageService MessageService
+
+@rendermode InteractiveServer
+
+<!-- From Uiverse.io by ahmed150up --> 
+<div class="card">
+    <div class="chat-header">Chat</div>
+    <div class="chat-window">
+        <ul class="message-list">
+            @foreach (var message in Messages)
+            {
+                @if (message is TextMessage textMessage)
+                {
+                    <TextMessageComponent Message="@textMessage"></TextMessageComponent>
+                }
+            }
+        </ul>
+    </div>
+    <div class="chat-input">
+        <input type="text" @bind="Input" class="message-input" placeholder="Type your message here">
+        <button class="send-button" @onclick="@Send">Send</button>
+    </div>
+</div>
 
 
 @code {
+    public string Username { get; set; }
+    public List<MessageBase> Messages = new();
     
+    public string Input { get; set; }
+    [CascadingParameter] private HttpContext HttpContext { get; set; } = default!;
+
+    private User DefaultUser;
+
+    
+    protected override async Task OnInitializedAsync()
+    {
+        /*var user = await UserManager.GetUserAsync(HttpContext.User);
+        if (user is null)
+        {
+            RedirectManager.RedirectToInvalidUser(UserManager, HttpContext);
+            return;
+        }*/
+
+        Username = "test"; //await UserManager.GetUserNameAsync("");
+
+        DefaultUser = new User
+        {
+            Email = Username,
+            Nickname = Username,
+            PasswordHash = "sefsefse",
+            Id = Guid.Empty,
+            CreatedAt = DateTime.MinValue
+        };
+
+        Messages = await MessageService.GetMessages(Guid.Empty, 10, 0);
+    }
+
+    async Task Send()
+    {
+        var msg = new TextMessage
+        {
+            User = DefaultUser,
+            Text = Input,
+            Id = Guid.NewGuid(),
+            SendAt = DateTime.UtcNow,
+        };
+        await MessageService.AddMessage(msg);
+        Messages.Add(msg);
+    }
 }

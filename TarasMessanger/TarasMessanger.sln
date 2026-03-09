@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarasMessanger.Web", "TarasMessanger.Web\TarasMessanger.Web.csproj", "{2DFCA0BD-B76B-4546-AEDE-73D4F985BD04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarasMessenger.Core", "TarasMessenger.Core\TarasMessenger.Core.csproj", "{E039F118-471D-4AD4-9EDA-0A97809FBA79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarasMessanger.Storage", "TarasMessanger.Storage\TarasMessanger.Storage.csproj", "{0C305B57-6EB9-41FD-BB1C-6FFF9599A91B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{2DFCA0BD-B76B-4546-AEDE-73D4F985BD04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DFCA0BD-B76B-4546-AEDE-73D4F985BD04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DFCA0BD-B76B-4546-AEDE-73D4F985BD04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E039F118-471D-4AD4-9EDA-0A97809FBA79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E039F118-471D-4AD4-9EDA-0A97809FBA79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E039F118-471D-4AD4-9EDA-0A97809FBA79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E039F118-471D-4AD4-9EDA-0A97809FBA79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C305B57-6EB9-41FD-BB1C-6FFF9599A91B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C305B57-6EB9-41FD-BB1C-6FFF9599A91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C305B57-6EB9-41FD-BB1C-6FFF9599A91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C305B57-6EB9-41FD-BB1C-6FFF9599A91B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

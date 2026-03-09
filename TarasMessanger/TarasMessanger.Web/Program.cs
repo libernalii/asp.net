@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using TarasMessanger.Storage;
 using TarasMessanger.Web.Components;
 using TarasMessanger.Web.Components.Account;
 using TarasMessanger.Web.Data;
@@ -22,10 +23,15 @@ builder.Services.AddAuthentication(options =>
     })
     .AddIdentityCookies();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ??
-                       throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var sqLiteConnection = builder.Configuration.GetConnectionString("SqLite") ??
+                       throw new InvalidOperationException("Connection string 'SqLite' not found.");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlite(sqLiteConnection));
+
+var sqlServerConnection = builder.Configuration.GetConnectionString("SqlServer") ??
+                       throw new InvalidOperationException("Connection string 'SqlServer' not found.");
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(sqlServerConnection));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddIdentityCore<ApplicationUser>(options =>

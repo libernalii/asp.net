@@ -1,6 +1,7 @@
 ﻿@page "/chat"
 @using Microsoft.AspNetCore.Identity
 @using Microsoft.AspNetCore.SignalR.Client
+@using Newtonsoft.Json
 @using TarasMessanger.Web.Components.Account
 @using TarasMessanger.Web.Components.UIComponents.Messages
 @using TarasMessanger.Web.Data
@@ -12,39 +13,56 @@
 @inject NavigationManager NavigationManager
 @inject MessageService MessageService
 @inject IHttpContextAccessor HttpContextAccessor
+@inject IJSRuntime JsRuntime
+@inject IWebHostEnvironment Environment
 
-@rendermode InteractiveServer
 
 <!-- From Uiverse.io by ahmed150up --> 
 <div class="card">
     <div class="chat-header">Chat</div>
     <div class="chat-window">
-        <ul class="message-list">
+        <ul class="message-list" id="message-list">
             @foreach (var message in Messages)
             {
                 @if (message is TextMessage textMessage)
                 {
                     <TextMessageComponent Message="@textMessage" IsMyMessage="@IsMyMessage(textMessage)"></TextMessageComponent>
                 }
+                else if (message is PictureMessage pictureMessage)
+                {
+                    <PictureMessageComponent Message="@pictureMessage" IsMyMessage="@IsMyMessage(pictureMessage)"></PictureMessageComponent>
+                }
             }
         </ul>
     </div>
     <div class="chat-input">
-        <input type="text" id="user-input" @bind="Input" class="message-input"  placeholder="Type your message here">
-        <button id="send_btn" class="send-button" @onclick="@Send">Send</button>
+        <EditForm Onsubmit="Send" enctype="multipart/form-data" Model="FormInput" FormName="inp">
+            <InputFile name="FormInput.File"></InputFile>
+            <InputText id="user-input" @bind-Value="FormInput.Input" class="message-input" placeholder="Type your message here"/>
+        </EditForm>
     </div>
 </div>
+
+<script>
+    function scrollToBottom(){
+        document.getElementById("message-list").scrollBy(0, 1000);
+    }
+</script>
 
 @code {
     private HubConnection _hubConnection;
     
-    public string Username { get; set; }
     public List<MessageBase> Messages = new();
+
+    [SupplyParameterFromForm(FormName = "inp")] public InputModel FormInput { get; set; } = new();
     
-    public string Input { get; set; }
+    public User CurrentUser;
 
-    private User DefaultUser;
-
+    public class InputModel
+    {
+        public string Input { get; set; }
+        public IFormFile? File { get; set; }
+    }
     
     protected override async Task OnInitializedAsync()
     {
@@ -52,13 +70,19 @@
             .WithUrl(NavigationManager.ToAbsoluteUri("/chatHub"))
             .Build();
 
-        _hubConnection.On<string, string>("ReceiveMessage", (sender, message) =>
+        _hubConnection.On<string, string>("ReceiveMessage", async (sender, message) =>
         {
-            InvokeAsync(async () =>
+            await InvokeAsync(() =>
             {
-                Messages = await MessageService.GetMessages(Guid.Empty, 10, 0);
-                Messages.Reverse();
-                StateHasChanged();
+                if (CurrentUser.Nickname != sender)
+                {
+                    var msg = JsonConvert.DeserializeObject<MessageBase>(message, new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.All
+                    });
+                    Messages.Add(msg);
+                    StateHasChanged();
+                }
             });
         });
 
@@ -71,13 +95,13 @@
             return;
         }
 
-        Username = await UserManager.GetUserNameAsync(user);
+        var username = await UserManager.GetUserNameAsync(user) ?? "guest";
 
-        DefaultUser = new User
+        CurrentUser = new User
         {
-            Email = Username,
-            Nickname = Username,
-            PasswordHash = "sefsefse",
+            Email = username,
+            Nickname = username.Remove(username.IndexOf('@')),
+            PasswordHash = user.PasswordHash ?? string.Empty,
             Id = Guid.Empty,
             CreatedAt = DateTime.MinValue
         };
@@ -88,18 +112,48 @@
 
     async Task Send()
     {
-        var msg = new TextMessage
-        {
-            User = DefaultUser,
-            Text = Input,
-            Id = Guid.NewGuid(),
-            SendAt = DateTime.UtcNow,
-        };
-        await MessageService.AddMessage(msg);
-        Messages.Add(msg);
+        MessageBase msg;
 
-        await _hubConnection.SendAsync("SendMessage", Username, Input);
+        if (FormInput.File != null)
+        {
+            Directory.CreateDirectory(Path.Combine(Environment.WebRootPath, "images"));
+
+            var path = Path.Combine("images", Path.GetRandomFileName() + Path.GetExtension(FormInput.File.FileName));
+            await using var fs = new FileStream(Path.Combine(Environment.WebRootPath, path), FileMode.Create);
+            await FormInput.File.OpenReadStream().CopyToAsync(fs);
+
+            msg = new PictureMessage
+            {
+                PicturePath = path,
+                Text = FormInput.Input
+            };
+        }
+        else
+        {
+            msg = new TextMessage
+            {
+                Text = FormInput.Input
+            };
+        }
+
+        msg.User = CurrentUser;
+        msg.Id = Guid.NewGuid();
+        msg.SendAt = DateTime.UtcNow;
+
+        FormInput.Input = string.Empty;
+        
+        Messages.Add(msg);
+        //await JsRuntime.InvokeVoidAsync("scrollToBottom");
+        StateHasChanged();
+        
+        var messageJson = JsonConvert.SerializeObject(msg, Formatting.Indented, new JsonSerializerSettings
+        {
+            TypeNameHandling = TypeNameHandling.All
+        });
+        await _hubConnection.SendAsync("SendMessage", CurrentUser.Nickname, messageJson);
+        
+        await MessageService.AddMessage(msg);
     }
 
-    public bool IsMyMessage(MessageBase message) => message.User.Nickname.Equals(Username);
+    public bool IsMyMessage(MessageBase message) => message.User.Nickname.Equals(CurrentUser.Nickname);
 }

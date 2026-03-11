@@ -1,6 +1,8 @@
-﻿@using TarasMessenger.Core.Models.Messages
+@using TarasMessenger.Core.Models.Messages
+@inject IWebHostEnvironment Environment
 
 <div class="message @(IsMyMessage ? "my-message" : "other-message")">
+    <img src="@Message.PicturePath" alt="message-picture" class="message-picture" />
     <div class="message-text">@Message.Text</div>
     <div class="d-flex justify-content-between w-100">
         <div class="sender">@(Message.User?.Nickname ?? "test")</div>
@@ -9,6 +11,6 @@
 </div>
 
 @code {
-    [Parameter] public TextMessage Message { get; set; }
+    [Parameter] public PictureMessage Message { get; set; }
     [Parameter] public bool IsMyMessage { get; set; }
 }

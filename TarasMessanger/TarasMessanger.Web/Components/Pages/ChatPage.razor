@@ -16,79 +16,107 @@
 @inject IJSRuntime JsRuntime
 @inject IWebHostEnvironment Environment
 
+@rendermode InteractiveServer
+@implements IAsyncDisposable
 
-<!-- From Uiverse.io by ahmed150up --> 
 <div class="card">
     <div class="chat-header">Chat</div>
-    <div class="chat-window">
+    <div class="chat-window" @ref="_chatWindowRef">
         <ul class="message-list" id="message-list">
+            <li id="scroll-sentinel" style="height: 1px; margin: 0; padding: 0; border: none;"></li>
             @foreach (var message in Messages)
             {
-                @if (message is TextMessage textMessage)
-                {
-                    <TextMessageComponent Message="@textMessage" IsMyMessage="@IsMyMessage(textMessage)"></TextMessageComponent>
-                }
-                else if (message is PictureMessage pictureMessage)
-                {
-                    <PictureMessageComponent Message="@pictureMessage" IsMyMessage="@IsMyMessage(pictureMessage)"></PictureMessageComponent>
-                }
+                <MessageContainerComponent Message="@message" IsMyMessage="@IsMyMessage(message)">
+                    <MessageComponent>
+                        @switch (message)
+                        {
+                            case TextMessage textMessage:
+                                <TextMessageComponent Message="@textMessage"  />
+                                break;
+                            case PictureMessage pictureMessage:
+                                <PictureMessageComponent Message="@pictureMessage" />
+                                break;
+                        }
+                    </MessageComponent>
+                </MessageContainerComponent>
             }
         </ul>
     </div>
     <div class="chat-input">
-        <EditForm Onsubmit="Send" enctype="multipart/form-data" Model="FormInput" FormName="inp">
-            <InputFile name="FormInput.File"></InputFile>
+        <EditForm OnValidSubmit="Send" enctype="multipart/form-data" Model="FormInput">
+            <InputFile OnChange="OnInputFileChange"></InputFile>
             <InputText id="user-input" @bind-Value="FormInput.Input" class="message-input" placeholder="Type your message here"/>
         </EditForm>
     </div>
 </div>
 
 <script>
-    function scrollToBottom(){
-        document.getElementById("message-list").scrollBy(0, 1000);
-    }
+    window.chatInterop = {
+        scrollToBottom: function (element) {
+            if (!element) return;
+            setTimeout(() => {
+                element.scrollTop = element.scrollHeight;
+            }, 50);
+        },
+        registerScrollObserver: function (element, dotNetRef) {
+            if (!element) return;
+            const sentinel = document.getElementById('scroll-sentinel');
+            if (!sentinel) return;
+
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting && element.scrollTop < (element.scrollHeight - element.clientHeight - 100)) {
+                    dotNetRef.invokeMethodAsync('LoadMoreMessages');
+                }
+            }, { root: element });
+
+            setTimeout(() => { observer.observe(sentinel); }, 500);
+        }
+    };
 </script>
 
 @code {
-    private HubConnection _hubConnection;
+    private ElementReference _chatWindowRef;
+    private ElementReference _messageListRef;
+    private DotNetObjectReference<ChatPage>? _dotNetRef; 
+    private int _currentOffset = 10;
+    private HubConnection? _hubConnection;
     
     public List<MessageBase> Messages = new();
-
-    [SupplyParameterFromForm(FormName = "inp")] public InputModel FormInput { get; set; } = new();
-    
-    public User CurrentUser;
+    public InputModel FormInput { get; set; } = new();
+    public User CurrentUser = default!;
 
     public class InputModel
     {
-        public string Input { get; set; }
-        public IFormFile? File { get; set; }
+        public string Input { get; set; } = string.Empty;
+        public IBrowserFile? File { get; set; }
     }
     
     protected override async Task OnInitializedAsync()
     {
+        _dotNetRef = DotNetObjectReference.Create(this);
         _hubConnection = new HubConnectionBuilder()
             .WithUrl(NavigationManager.ToAbsoluteUri("/chatHub"))
             .Build();
 
         _hubConnection.On<string, string>("ReceiveMessage", async (sender, message) =>
         {
-            await InvokeAsync(() =>
+            var msg = JsonConvert.DeserializeObject<MessageBase>(message, new JsonSerializerSettings
             {
-                if (CurrentUser.Nickname != sender)
-                {
-                    var msg = JsonConvert.DeserializeObject<MessageBase>(message, new JsonSerializerSettings
-                    {
-                        TypeNameHandling = TypeNameHandling.All
-                    });
-                    Messages.Add(msg);
-                    StateHasChanged();
-                }
+                TypeNameHandling = TypeNameHandling.All
             });
+
+            if (msg != null && CurrentUser.Nickname != sender)
+            {
+                Messages.Add(msg);
+                _currentOffset++;
+                await InvokeAsync(StateHasChanged);
+                await TriggerScrollToBottom();
+            }
         });
 
         await _hubConnection.StartAsync();
         
-        var user = await UserManager.GetUserAsync(HttpContextAccessor.HttpContext.User);
+        var user = await UserManager.GetUserAsync(HttpContextAccessor.HttpContext!.User);
         if (user is null)
         {
             RedirectManager.RedirectToInvalidUser(UserManager, HttpContextAccessor.HttpContext);
@@ -100,7 +128,7 @@
         CurrentUser = new User
         {
             Email = username,
-            Nickname = username.Remove(username.IndexOf('@')),
+            Nickname = username.Contains('@') ? username[..username.IndexOf('@')] : username,
             PasswordHash = user.PasswordHash ?? string.Empty,
             Id = Guid.Empty,
             CreatedAt = DateTime.MinValue
@@ -109,18 +137,49 @@
         Messages = await MessageService.GetMessages(Guid.Empty, 10, 0);
         Messages.Reverse();
     }
-
-    async Task Send()
+    
+    protected override async Task OnAfterRenderAsync(bool firstRender)
     {
+        if (firstRender)
+        {
+            await JsRuntime.InvokeVoidAsync("chatInterop.registerScrollObserver", _chatWindowRef, _dotNetRef);
+            await TriggerScrollToBottom();
+        }
+    }
+    
+    [JSInvokable]
+    public async Task LoadMoreMessages()
+    {
+        var olderMessages = await MessageService.GetMessages(Guid.Empty, 5, _currentOffset);
+        if (olderMessages.Any())
+        {
+            olderMessages.Reverse();
+            Messages.InsertRange(0, olderMessages);
+            _currentOffset += 5;
+            StateHasChanged();
+        }
+    }
+    
+    private void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        FormInput.File = e.File;
+    }
+
+    private async Task Send()
+    {
+        if (string.IsNullOrWhiteSpace(FormInput.Input) && FormInput.File == null) return;
+
         MessageBase msg;
 
         if (FormInput.File != null)
         {
             Directory.CreateDirectory(Path.Combine(Environment.WebRootPath, "images"));
-
-            var path = Path.Combine("images", Path.GetRandomFileName() + Path.GetExtension(FormInput.File.FileName));
+            
+            var path = Path.Combine("images", Path.GetRandomFileName() + Path.GetExtension(FormInput.File.Name));
             await using var fs = new FileStream(Path.Combine(Environment.WebRootPath, path), FileMode.Create);
-            await FormInput.File.OpenReadStream().CopyToAsync(fs);
+            
+            const long maxAllowedSize = 10485760; 
+            await FormInput.File.OpenReadStream(maxAllowedSize).CopyToAsync(fs);
 
             msg = new PictureMessage
             {
@@ -141,19 +200,37 @@
         msg.SendAt = DateTime.UtcNow;
 
         FormInput.Input = string.Empty;
+        FormInput.File = null;
         
         Messages.Add(msg);
-        //await JsRuntime.InvokeVoidAsync("scrollToBottom");
-        StateHasChanged();
+        _currentOffset++;
+        StateHasChanged(); 
+        
+        await TriggerScrollToBottom();
         
         var messageJson = JsonConvert.SerializeObject(msg, Formatting.Indented, new JsonSerializerSettings
         {
             TypeNameHandling = TypeNameHandling.All
         });
-        await _hubConnection.SendAsync("SendMessage", CurrentUser.Nickname, messageJson);
+        await _hubConnection!.SendAsync("SendMessage", CurrentUser.Nickname, messageJson);
         
         await MessageService.AddMessage(msg);
     }
 
+    private async Task TriggerScrollToBottom()
+    {
+        await Task.Yield();
+        await JsRuntime.InvokeVoidAsync("chatInterop.scrollToBottom", _chatWindowRef);
+    }
+
     public bool IsMyMessage(MessageBase message) => message.User.Nickname.Equals(CurrentUser.Nickname);
+
+    public async ValueTask DisposeAsync()
+    {
+        _dotNetRef?.Dispose();
+        if (_hubConnection is not null)
+        {
+            await _hubConnection.DisposeAsync();
+        }
+    }
 }

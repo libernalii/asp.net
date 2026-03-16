@@ -5,8 +5,8 @@ namespace NewChatApp.Core.Abstractions;
 public interface IUsersRepository
 {
     Task<User[]> SearchUsers(SearchOption options);
-    ValueTask<User?> GetAsync(Guid id);
-    ValueTask<User?> GetAsync(string email);
+    ValueTask<User?> Get(Guid id);
+    ValueTask<User?> Get(string email);
     Task<User> Add(User user);
     Task<User> Update(User user);
     Task Delete(User user);

@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewChatApp.Core", "NewChatA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewChatApp.Storage", "NewChatApp.Storage\NewChatApp.Storage.csproj", "{8F413D93-79F0-46FB-A957-38A73261B4A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewChatApp.WebApi", "NewChatApp.WebApi\NewChatApp.WebApi.csproj", "{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,9 +40,14 @@ Global
 		{8F413D93-79F0-46FB-A957-38A73261B4A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F413D93-79F0-46FB-A957-38A73261B4A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F413D93-79F0-46FB-A957-38A73261B4A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FDED52B-C142-480F-AC50-AFAB6E97BA60} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
 		{8F413D93-79F0-46FB-A957-38A73261B4A7} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
+		{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
 	EndGlobalSection
 EndGlobal

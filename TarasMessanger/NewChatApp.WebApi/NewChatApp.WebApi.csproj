@@ -8,9 +8,13 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.4"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="10.1.5" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="10.1.5" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.1.5" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\NewChatApp.Application\NewChatApp.Application.csproj" />
       <ProjectReference Include="..\NewChatApp.Core\NewChatApp.Core.csproj" />
       <ProjectReference Include="..\NewChatApp.Storage\NewChatApp.Storage.csproj" />
     </ItemGroup>

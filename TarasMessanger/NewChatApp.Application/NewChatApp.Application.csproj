@@ -7,11 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\NewChatApp.Shared\NewChatApp.Shared.csproj" />
+      <ProjectReference Include="..\NewChatApp.Core\NewChatApp.Core.csproj" />
     </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace NewChatApp.Core.Models;
+namespace NewChatApp.Core.Models.Users;
 
 public class User
 {

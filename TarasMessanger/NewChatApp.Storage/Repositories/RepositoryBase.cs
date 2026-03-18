@@ -14,7 +14,6 @@ public abstract class RepositoryBase<T> where T : class
     {
         _unitOfWork = unitOfWork;
         _connection = connectionFactory.GetConnection();
-        _connection.Open();
     }
 
     public async Task<T> InsertWithRetry(string sql, T entity)
@@ -52,7 +51,7 @@ public abstract class RepositoryBase<T> where T : class
         {
             try
             {
-                return await _connection.QueryAsync<T>(sql, options);
+                return await _connection.QueryAsync<T>(sql, options, _unitOfWork.Transaction);
             }
             catch (Exception)
             {

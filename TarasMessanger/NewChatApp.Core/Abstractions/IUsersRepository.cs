@@ -1,4 +1,4 @@
-using NewChatApp.Core.Models;
+using NewChatApp.Core.Models.Users;
 
 namespace NewChatApp.Core.Abstractions;
 
@@ -13,4 +13,9 @@ public interface IUsersRepository
     Task<bool> IsEmailUnique(string email);
 }
 
-public record SearchOptions(string SearchText, int Limit, int Offset);
+public class SearchOptions
+{
+    public string? SearchText { get; set; }
+    public int Limit { get; set; } = 10;
+    public int Offset { get; set; } = 0;
+}

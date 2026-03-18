@@ -1,5 +1,6 @@
 using NewChatApp.Core.Abstractions;
 using NewChatApp.Core.Models;
+using NewChatApp.Core.Models.Users;
 
 namespace NewChatApp.Storage.Repositories;
 
@@ -12,6 +13,8 @@ public sealed class UsersRepository : RepositoryBase<User>, IUsersRepository
 
     public async Task<User[]> SearchUsers(SearchOptions options)
     {
+        options.SearchText = $"%{options.SearchText}%";
+        
         var sql = @"SELECT [id], [nickname], [email] FROM [users] 
 WHERE [nickname] LIKE @searchText
 ORDER BY [id]

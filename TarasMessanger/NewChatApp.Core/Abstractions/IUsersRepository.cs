@@ -4,7 +4,7 @@ namespace NewChatApp.Core.Abstractions;
 
 public interface IUsersRepository
 {
-    Task<User[]> SearchUsers(SearchOption options);
+    Task<User[]> SearchUsers(SearchOptions options);
     ValueTask<User?> Get(Guid id);
     ValueTask<User?> Get(string email);
     Task<User> Add(User user);
@@ -13,4 +13,4 @@ public interface IUsersRepository
     Task<bool> IsEmailUnique(string email);
 }
 
-public record SearchOptions(string SearchText);
+public record SearchOptions(string SearchText, int Limit, int Offset);

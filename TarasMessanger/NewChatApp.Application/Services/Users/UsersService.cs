@@ -36,17 +36,26 @@ public class UsersService
             CreatedAt = DateTime.UtcNow
         };
         
-        var userFromDb = await _usersRepository.Add(user);
-        _unitOfWork.Commit();
-        
-        return ToUserDto(userFromDb);
+        try
+        {
+            var userFromDb = await _usersRepository.Add(user);
+            _unitOfWork.Commit();
+            
+            return ToUserDto(userFromDb);
+        }
+        catch (Exception ex)
+        {
+            _unitOfWork.Rollback();
+
+            throw;
+        }
     }
     
-    public async Task<Result<UserDto[]>> Search(SearchOptions options)
+    public async Task<Result<PagedList<UserDto>>> Search(SearchOptions options)
     {
-        var user = await _usersRepository.SearchUsers(options);
-        
-        return user.Select(ToUserDto).ToArray();
+        var users = await _usersRepository.SearchUsers(options);
+
+        return users.Cast(ToUserDto);
     }
 
     private UserDto ToUserDto(User user) => new UserDto

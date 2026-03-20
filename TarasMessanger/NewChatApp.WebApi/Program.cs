@@ -9,10 +9,25 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<SqlConnectionFactory>();
-builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IUnitOfWork, DapperUnitOfWork>();
 
+/*builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IChatsRepository, ChatsRepository>();
+builder.Services.AddScoped<IChatMessagesRepository, ChatMessagesRepository>();
+
 builder.Services.AddScoped<UsersService>();
+builder.Services.AddScoped<ChatsService>();
+builder.Services.AddScoped<ChatMessagesService>();*/
+
+builder.Services.Scan(scan => scan
+    .FromAssemblyOf<UsersRepository>()
+    .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Repository")))
+    .AsImplementedInterfaces()
+    .WithScopedLifetime()
+    .FromAssemblyOf<UsersService>()
+    .AddClasses(classes => classes.Where(type => type.Name.EndsWith("Service")))
+    .AsSelf()
+    .WithScopedLifetime());
 
 var app = builder.Build();
 

@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using NewChatApp.Application.Services.Users;
 using NewChatApp.Core.Abstractions;
@@ -6,7 +7,7 @@ namespace NewChatApp.WebApi.Controllers;
 
 [ApiController]
 [Route("api/users")]
-public class UsersController : ControllerBase
+public class UsersController : WebApiController
 {
     private readonly UsersService _usersService;
 
@@ -18,20 +19,18 @@ public class UsersController : ControllerBase
     [HttpGet("search")]
     public async Task<IActionResult> Search([FromQuery] SearchOptions options)
     {
+        var sw = Stopwatch.StartNew();
         var result = await _usersService.Search(options);
 
-        return result.IsSuccess
-            ? Ok(result.Value)
-            : BadRequest(result.Error);
+        return OkResponse(result, sw.Elapsed.TotalMilliseconds);
     }
     
     [HttpPost]
     public async Task<IActionResult> Search([FromBody] CreateUserRequest request)
     {
+        var sw = Stopwatch.StartNew();
         var result = await _usersService.Add(request);
 
-        return result.IsSuccess
-            ? CreatedAtAction(nameof(Search), new { }, result.Value)
-            : BadRequest(result.Error);
+        return CreatedResponse(result, nameof(Search), sw.Elapsed.TotalMilliseconds);
     }
 }

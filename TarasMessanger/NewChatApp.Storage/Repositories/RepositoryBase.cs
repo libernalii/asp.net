@@ -43,7 +43,7 @@ public abstract class RepositoryBase<T> where T : class
         throw new Exception("Failed to insert entity");
     }
     
-    public async Task<IEnumerable<T>> SelectWithRetry<TOptions>(string sql, TOptions options)
+    public async Task<IEnumerable<TEntity>> SelectWithRetry<TEntity, TOptions>(string sql, TOptions options)
     {
         var retries = 0;
 
@@ -51,7 +51,7 @@ public abstract class RepositoryBase<T> where T : class
         {
             try
             {
-                return await _connection.QueryAsync<T>(sql, options, _unitOfWork.Transaction);
+                return await _connection.QueryAsync<TEntity>(sql, options, _unitOfWork.Transaction);
             }
             catch (Exception)
             {

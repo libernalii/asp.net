@@ -1,10 +1,11 @@
 using NewChatApp.Core.Models.Users;
+using NewChatApp.Shared.Common;
 
 namespace NewChatApp.Core.Abstractions;
 
 public interface IUsersRepository
 {
-    Task<User[]> SearchUsers(SearchOptions options);
+    Task<PagedList<User>> SearchUsers(SearchOptions options);
     ValueTask<User?> Get(Guid id);
     ValueTask<User?> Get(string email);
     Task<User> Add(User user);

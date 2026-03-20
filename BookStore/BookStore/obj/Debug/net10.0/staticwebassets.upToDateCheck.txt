@@ -1,8 +1,0 @@
-wwwroot\app.css
-Components\Layout\ReconnectModal.razor.js
-C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.3\build\..\_framework\blazor.web.js
-C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.3\build\..\_framework\blazor.server.js
-C:\Users\Admin\Desktop\asp.net-hw\BookStore\BookStore\wwwroot\app.css
-C:\Users\Admin\Desktop\asp.net-hw\BookStore\BookStore\Components\Layout\ReconnectModal.razor.js
-C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.3\_framework\blazor.web.js
-C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.3\_framework\blazor.server.js

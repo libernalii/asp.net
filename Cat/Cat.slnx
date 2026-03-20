@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Cat/Cat.csproj" />
+  <Project Path="DLL/DLL.csproj" />
+</Solution>

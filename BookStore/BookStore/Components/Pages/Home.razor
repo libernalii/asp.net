@@ -1,0 +1,51 @@
+﻿@page "/"
+@using BookStore.Models
+@using BookStore.Services
+@inject BookService BookService
+@inject NavigationManager Nav
+
+<h3>📚 Всі книги</h3>
+
+<div class="book-grid">
+    @foreach (var book in PagedBooks)
+    {
+        <div class="card" @onclick="() => OpenBook(book.Id)">
+            <h4>@book.Title</h4>
+            <p>@book.Author</p>
+            <b>@book.Price грн</b>
+        </div>
+    }
+</div>
+
+<div class="pagination">
+    <button @onclick="PrevPage">Назад</button>
+    <span>Сторінка @currentPage</span>
+    <button @onclick="NextPage">Вперед</button>
+</div>
+
+@code {
+    private int currentPage = 1;
+    private int pageSize = 2;
+
+    private List<Book> Books => BookService.GetAll();
+
+    private List<Book> PagedBooks =>
+        Books.Skip((currentPage - 1) * pageSize).Take(pageSize).ToList();
+
+    void OpenBook(int id)
+    {
+        Nav.NavigateTo($"/book/{id}");
+    }
+
+    void NextPage()
+    {
+        if (currentPage * pageSize < Books.Count)
+            currentPage++;
+    }
+
+    void PrevPage()
+    {
+        if (currentPage > 1)
+            currentPage--;
+    }
+}

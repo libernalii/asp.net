@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "F/FE56dEWS4=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\BookStore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.3\\microsoft.aspnetcore.app.internal.assets.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

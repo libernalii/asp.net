@@ -1,0 +1,8 @@
+wwwroot\app.css
+Components\Layout\ReconnectModal.razor.js
+C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\build\..\_framework\blazor.web.js
+C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\build\..\_framework\blazor.server.js
+C:\Users\Admin\Desktop\asp.net-hw\CryptoApp\CryptoApp\Components\Layout\ReconnectModal.razor.js
+C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\_framework\blazor.web.js
+C:\Users\Admin\.nuget\packages\microsoft.aspnetcore.app.internal.assets\10.0.5\_framework\blazor.server.js
+C:\Users\Admin\Desktop\asp.net-hw\CryptoApp\CryptoApp\wwwroot\app.css

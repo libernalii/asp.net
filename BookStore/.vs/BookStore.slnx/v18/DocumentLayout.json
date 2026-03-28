@@ -1,0 +1,126 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\bookstore\\bookstore\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\bookstore\\bookstore\\components\\pages\\bookdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\components\\pages\\bookdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\bookstore\\bookstore\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\bookstore\\bookstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\bookstore\\bookstore\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\bookstore\\bookstore\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{768C62BB-CE0E-4888-8451-839761DD9245}|BookStore\\BookStore.csproj|solutionrelative:bookstore\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "BookStore\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\wwwroot\\app.css",
+              "RelativeToolTip": "BookStore\\wwwroot\\app.css",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAuwFIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-20T10:04:39.709Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookDetails.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Components\\Pages\\BookDetails.razor",
+              "RelativeDocumentMoniker": "BookStore\\Components\\Pages\\BookDetails.razor",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Components\\Pages\\BookDetails.razor",
+              "RelativeToolTip": "BookStore\\Components\\Pages\\BookDetails.razor",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T10:04:04.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "BookStore\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "BookStore\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-20T10:03:27.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Program.cs",
+              "RelativeDocumentMoniker": "BookStore\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Program.cs",
+              "RelativeToolTip": "BookStore\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:03:08.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "BookStore\\Services\\BookService.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Services\\BookService.cs",
+              "RelativeToolTip": "BookStore\\Services\\BookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:02:44.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "BookStore\\Models\\Book.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\BookStore\\BookStore\\Models\\Book.cs",
+              "RelativeToolTip": "BookStore\\Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-20T10:02:04.146Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

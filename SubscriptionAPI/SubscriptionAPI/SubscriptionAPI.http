@@ -1,0 +1,87 @@
+@SubscriptionAPI_HostAddress = http://localhost:5073
+
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/user
+Accept: application/json
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/user/{id}
+Accept: application/json
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/user/a
+Accept: application/json
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/user/subscription
+Accept: application/json
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/user/premium
+Accept: application/json
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/user/top
+Accept: application/json
+
+###
+POST {{SubscriptionAPI_HostAddress}}/api/v1/user
+Accept: application/json
+{
+    name: "Alisa",
+    bday: 12-02-2002,
+    email: "alisa@exaple.com"
+}
+
+###
+PUT {{SubscriptionAPI_HostAddress}}/api/v1/user
+Accept: application/json
+{
+    id: 1,
+    name: "Alisa",
+    bday: 12-02-2002,
+    email: "alisa@gmail.com"
+}
+
+###
+DELETE {{SubscriptionAPI_HostAddress}}/api/v1/user/{id}
+Accept: application/json
+
+###
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/subscription
+Accept: application/json
+
+###
+GET {{SubscriptionAPI_HostAddress}}/api/v1/subscription/{id}
+Accept: application/json
+
+###
+POST {{SubscriptionAPI_HostAddress}}/api/v1/subscription
+Accept: application/json
+{
+    name: "...",
+    price: 123
+    startDate: 12-02-2002,
+    finishDate: 12-03-2002,
+    type: "Free"
+    userId: 1
+}
+
+###
+PUT {{SubscriptionAPI_HostAddress}}/api/v1/subscription
+Accept: application/json
+{
+    name: "...",
+    price: 567
+    startDate: 12-02-2022,
+    finishDate: 12-02-2032,
+    type: "Premium"
+    userId: 1
+}
+
+###
+DELETE {{SubscriptionAPI_HostAddress}}/api/v1/subscription/{id}
+Accept: application/json

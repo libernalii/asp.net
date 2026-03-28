@@ -1,0 +1,102 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\cryptoapp\\cryptoapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|solutionrelative:cryptoapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\cryptoapp\\cryptoapp\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|solutionrelative:cryptoapp\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\cryptoapp\\cryptoapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|solutionrelative:cryptoapp\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|c:\\users\\admin\\desktop\\asp.net-hw\\cryptoapp\\cryptoapp\\models\\cryptocurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BBA66B2-2231-140C-D52D-D141819056D9}|CryptoApp\\CryptoApp.csproj|solutionrelative:cryptoapp\\models\\cryptocurrency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\Program.cs",
+              "RelativeDocumentMoniker": "CryptoApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\Program.cs*",
+              "RelativeToolTip": "CryptoApp\\Program.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T10:31:15.487Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "CryptoApp\\Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "CryptoApp\\Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-28T10:24:40.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CryptoCurrency.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\Models\\CryptoCurrency.cs",
+              "RelativeDocumentMoniker": "CryptoApp\\Models\\CryptoCurrency.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\Models\\CryptoCurrency.cs",
+              "RelativeToolTip": "CryptoApp\\Models\\CryptoCurrency.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T10:23:47.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.css",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "CryptoApp\\wwwroot\\app.css",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\asp.net-hw\\CryptoApp\\CryptoApp\\wwwroot\\app.css",
+              "RelativeToolTip": "CryptoApp\\wwwroot\\app.css",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAD0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-03-28T10:25:21.589Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

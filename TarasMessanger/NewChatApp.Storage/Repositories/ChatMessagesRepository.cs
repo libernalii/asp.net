@@ -56,7 +56,7 @@ WHERE id = @Id";
         return MapToDomain(result);
     }
 
-    // 🔥 Mapping
+    // Mapping
 
     private static ChatMessageBase MapToDomain(ChatMessageEntity entity)
     {

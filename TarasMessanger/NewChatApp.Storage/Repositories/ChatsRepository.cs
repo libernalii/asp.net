@@ -101,7 +101,7 @@ VALUES (@Id, @CreatedAt, @Type, @Name)";
         await SelectWithRetry<object, object>(sql, new { chat.Id });
     }
 
-    // 🔥 Mapping
+    // Mapping
 
     private static ChatBase MapToDomain(ChatEntity entity)
     {

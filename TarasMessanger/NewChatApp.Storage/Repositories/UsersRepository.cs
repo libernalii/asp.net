@@ -15,7 +15,7 @@ public sealed class UsersRepository : RepositoryBase<User>, IUsersRepository
     public async Task<PagedList<User>> SearchUsers(SearchOptions options)
     {
         options.SearchText = $"%{options.SearchText}%";
-        
+
         var sql = @"SELECT [id], [nickname], [email], count(*) OVER() AS 'total_count' FROM [users] 
 WHERE [nickname] LIKE @searchText
 ORDER BY [id]
@@ -37,14 +37,26 @@ OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY";
         };
     }
 
-    public ValueTask<User?> Get(Guid id)
+    public async ValueTask<User?> Get(Guid id)
     {
-        throw new NotImplementedException();
+        var sql = @"SELECT [id], [nickname], [email], [password_hash], [created_at]
+                FROM [users]
+                WHERE [id] = @id";
+
+        var result = await SelectWithRetry<User, object>(sql, new { id });
+
+        return result.FirstOrDefault();
     }
 
-    public ValueTask<User?> Get(string email)
+    public async ValueTask<User?> Get(string email)
     {
-        throw new NotImplementedException();
+        var sql = @"SELECT [id], [nickname], [email], [password_hash], [created_at]
+                FROM [users]
+                WHERE [email] = @email";
+
+        var result = await SelectWithRetry<User, object>(sql, new { email });
+
+        return result.FirstOrDefault();
     }
 
     public Task<User> Add(User user)
@@ -55,18 +67,32 @@ VALUES (@id, @nickname, @email, @createdAt, @passwordHash)";
         return InsertWithRetry(sql, user);
     }
 
-    public Task<User> Update(User user)
+    public async Task<User> Update(User user)
     {
-        throw new NotImplementedException();
+        var sql = @"
+UPDATE [users]
+SET nickname = @nickname,
+    email = @email,
+    password_hash = @passwordHash
+OUTPUT inserted.*
+WHERE id = @id";
+
+        return await InsertWithRetry(sql, user);
     }
 
-    public Task Delete(User user)
+    public async Task Delete(User user)
     {
-        throw new NotImplementedException();
+        var sql = @"DELETE FROM [users] WHERE id = @id";
+
+        await SelectWithRetry<object, object>(sql, new { user.Id });
     }
 
-    public Task<bool> IsEmailUnique(string email)
+    public async Task<bool> IsEmailUnique(string email)
     {
-        throw new NotImplementedException();
+        var sql = @"SELECT COUNT(1) FROM [users] WHERE email = @email";
+
+        var result = await SelectWithRetry<int, object>(sql, new { email });
+
+        return result.FirstOrDefault() == 0;
     }
 }

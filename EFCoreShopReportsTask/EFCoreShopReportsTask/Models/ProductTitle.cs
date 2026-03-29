@@ -1,0 +1,24 @@
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EFCoreShopReportsTask.Models
+{
+    [Table("product_titles")]
+    public class ProductTitle
+        {
+        [Key]
+        [Column("product_title_id")]
+        public int Id { get; set; }
+
+        [Column("product_title")]
+        public string Title { get; set; }
+
+        [Column("product_category_id")]
+        [ForeignKey("Category")]
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; } = null!;
+
+        public virtual IList<Product> Products { get; set; }= null!;
+    }
+}

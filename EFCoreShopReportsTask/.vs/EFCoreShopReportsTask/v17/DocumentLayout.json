@@ -1,0 +1,309 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\services\\productreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\services\\productreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\models\\supermarketlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\models\\supermarketlocation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\services\\productreportservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\services\\productreportservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\services\\ireadonlylisthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\services\\ireadonlylisthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\services\\customerreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\services\\customerreportservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\services\\reportservicebasetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\services\\reportservicebasetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\models\\shopcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\models\\shopcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\models\\producttitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\models\\producttitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\reports\\producttitlesalesrevenuereportline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\reports\\producttitlesalesrevenuereportline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\services\\customerreportservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\services\\customerreportservicetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask\\reports\\customersalesrevenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FC00CD0-DD61-44AF-8D05-6787C5EED5BB}|EFCoreShopReportsTask\\EFCoreShopReportsTask.csproj|solutionrelative:efcoreshopreportstask\\reports\\customersalesrevenuereport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\shopcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\shopcontextfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\services\\builders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\services\\builders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\models\\supermarkettests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\models\\supermarkettests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|c:\\users\\1\\desktop\\efcoreshopreportstask\\efcoreshopreportstask.tests\\models\\suppliertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EE67F129-86E6-492D-B66A-D609B4110F65}|EFCoreShopReportsTask.Tests\\EFCoreShopReportsTask.Tests.csproj|solutionrelative:efcoreshopreportstask.tests\\models\\suppliertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 235,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SupermarketLocation.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\SupermarketLocation.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Models\\SupermarketLocation.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\SupermarketLocation.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Models\\SupermarketLocation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T16:23:04.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductReportService.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Services\\ProductReportService.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Services\\ProductReportService.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Services\\ProductReportService.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Services\\ProductReportService.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwDMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:51:41.469Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ReportServiceBaseTests.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\ReportServiceBaseTests.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Services\\ReportServiceBaseTests.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\ReportServiceBaseTests.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Services\\ReportServiceBaseTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:49:00.285Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductReportServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\ProductReportServiceTests.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Services\\ProductReportServiceTests.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\ProductReportServiceTests.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Services\\ProductReportServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:49:00.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IReadOnlyListHelper.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\IReadOnlyListHelper.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Services\\IReadOnlyListHelper.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\IReadOnlyListHelper.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Services\\IReadOnlyListHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:49:01.177Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerReportService.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Services\\CustomerReportService.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Services\\CustomerReportService.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Services\\CustomerReportService.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Services\\CustomerReportService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:50:31.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ShopContext.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\ShopContext.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Models\\ShopContext.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\ShopContext.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Models\\ShopContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T16:14:35.274Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\Product.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T14:49:26.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Program.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Program.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Program.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:08:22.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductTitle.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\ProductTitle.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Models\\ProductTitle.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Models\\ProductTitle.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Models\\ProductTitle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T15:08:18.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductTitleSalesRevenueReportLine.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Reports\\ProductTitleSalesRevenueReportLine.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Reports\\ProductTitleSalesRevenueReportLine.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Reports\\ProductTitleSalesRevenueReportLine.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Reports\\ProductTitleSalesRevenueReportLine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T08:13:32.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CustomerReportServiceTests.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\CustomerReportServiceTests.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Services\\CustomerReportServiceTests.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\CustomerReportServiceTests.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Services\\CustomerReportServiceTests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:48:41.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CustomerSalesRevenueReport.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Reports\\CustomerSalesRevenueReport.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask\\Reports\\CustomerSalesRevenueReport.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask\\Reports\\CustomerSalesRevenueReport.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask\\Reports\\CustomerSalesRevenueReport.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-29T14:49:34.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ShopContextFactory.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\ShopContextFactory.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\ShopContextFactory.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\ShopContextFactory.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\ShopContextFactory.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:52:22.808Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Builders.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\Builders.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Services\\Builders.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Services\\Builders.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Services\\Builders.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:49:02.005Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "SupermarketTests.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Models\\SupermarketTests.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Models\\SupermarketTests.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Models\\SupermarketTests.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Models\\SupermarketTests.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwC4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:37:41.578Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SupplierTests.cs",
+              "DocumentMoniker": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Models\\SupplierTests.cs",
+              "RelativeDocumentMoniker": "EFCoreShopReportsTask.Tests\\Models\\SupplierTests.cs",
+              "ToolTip": "C:\\Users\\1\\Desktop\\EFCoreShopReportsTask\\EFCoreShopReportsTask.Tests\\Models\\SupplierTests.cs",
+              "RelativeToolTip": "EFCoreShopReportsTask.Tests\\Models\\SupplierTests.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwDIAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-23T18:04:01.836Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

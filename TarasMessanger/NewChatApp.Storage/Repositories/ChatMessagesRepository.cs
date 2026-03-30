@@ -16,10 +16,10 @@ public class ChatMessagesRepository : RepositoryBase<ChatMessageEntity>, IChatMe
     public async Task<ChatMessageBase[]> Get(Guid chatId, int limit, int offset)
     {
         var sql = @"
-SELECT * FROM chat_messages
-WHERE chat_id = @chatId
-ORDER BY send_at DESC
-OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY";
+            SELECT * FROM chat_messages
+            WHERE chat_id = @chatId
+            ORDER BY send_at DESC
+            OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY";
 
         var messages = await SelectWithRetry<ChatMessageEntity, object>(sql, new { chatId, limit, offset });
 
@@ -29,25 +29,46 @@ OFFSET @offset ROWS FETCH NEXT @limit ROWS ONLY";
     public async Task<ChatMessageBase> Add(ChatMessageBase message)
     {
         var sql = @"
-INSERT INTO chat_messages (id, send_at, sender_id, chat_id, status, content, type)
-OUTPUT inserted.*
-VALUES (@Id, @SendAt, @SenderId, @ChatId, @Status, @Content, @Type)";
+            INSERT INTO chat_messages (id, send_at, sender_id, chat_id, status, content, type)
+            OUTPUT inserted.*
+            VALUES (@Id, @SendAt, @SenderId, @ChatId, @Status, @Content, @Type)";
 
         var entity = MapToEntity(message);
 
-        var result = await InsertWithRetry(sql, entity);
+        var inserted = await InsertWithRetry(sql, entity);
 
-        return MapToDomain(result);
+        var result = MapToDomain(inserted);
+
+        if (message is FileChatMessage fileMessage)
+        {
+            var fileSql = @"
+                INSERT INTO chat_message_files (id, message_id, file_name, file_path, size)
+                VALUES (@Id, @MessageId, @FileName, @FilePath, @Size)";
+
+            foreach (var file in fileMessage.Files)
+            {
+                await SelectWithRetry<object, object>(fileSql, new
+                {
+                    Id = Guid.NewGuid(),
+                    MessageId = result.Id,
+                    FileName = file.FileName,
+                    FilePath = file.FilePath,
+                    Size = file.Size
+                });
+            }
+        }
+
+        return result;
     }
 
     public async Task<ChatMessageBase> Update(ChatMessageBase message)
     {
         var sql = @"
-UPDATE chat_messages
-SET status = @Status,
-    content = @Content
-OUTPUT inserted.*
-WHERE id = @Id";
+            UPDATE chat_messages
+            SET status = @Status,
+                content = @Content
+            OUTPUT inserted.*
+            WHERE id = @Id";
 
         var entity = MapToEntity(message);
 
@@ -80,6 +101,15 @@ WHERE id = @Id";
                 Status = (ChatMessageStatus)entity.Status,
                 Content = entity.Content
             },
+            "File" => new FileChatMessage
+            {
+                Id = entity.Id,
+                SendAt = entity.SendAt,
+                SenderId = entity.SenderId,
+                ChatId = entity.ChatId,
+                Status = (ChatMessageStatus)entity.Status,
+                Content = entity.Content
+            },
             _ => throw new Exception("Unknown message type")
         };
     }
@@ -98,6 +128,7 @@ WHERE id = @Id";
             {
                 TextChatMessage => "Text",
                 PictureChatMessage => "Picture",
+                FileChatMessage => "File",
                 _ => throw new Exception("Unknown message type")
             }
         };

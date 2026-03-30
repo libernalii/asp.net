@@ -1,3 +1,5 @@
+using NewChatApp.Application.Services.ChatMessages;
+using NewChatApp.Application.Services.Chats;
 using NewChatApp.Application.Services.Users;
 using NewChatApp.Core.Abstractions;
 using NewChatApp.Storage;
@@ -10,6 +12,9 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<SqlConnectionFactory>();
 builder.Services.AddScoped<IUnitOfWork, DapperUnitOfWork>();
+
+builder.Services.AddScoped<ChatsService>();
+builder.Services.AddScoped<ChatMessagesService>();
 
 /*builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IChatsRepository, ChatsRepository>();

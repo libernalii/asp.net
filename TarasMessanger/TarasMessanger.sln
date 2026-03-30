@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.4.11620.152 stable
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarasMessanger.Web", "TarasMessanger.Web\TarasMessanger.Web.csproj", "{2DFCA0BD-B76B-4546-AEDE-73D4F985BD04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarasMessenger.Core", "TarasMessenger.Core\TarasMessenger.Core.csproj", "{E039F118-471D-4AD4-9EDA-0A97809FBA79}"
@@ -57,11 +60,17 @@ Global
 		{DE9AE2CE-65C0-4E79-92A9-49598AB18195}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9AE2CE-65C0-4E79-92A9-49598AB18195}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{4FDED52B-C142-480F-AC50-AFAB6E97BA60} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
 		{8F413D93-79F0-46FB-A957-38A73261B4A7} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
 		{1403CF6B-FAEB-4027-8EA9-E5179DDC3A4F} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
 		{9323BA69-267B-4DAC-92CE-8437070E2FCA} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
 		{DE9AE2CE-65C0-4E79-92A9-49598AB18195} = {A18E9E6B-0D10-4967-AC66-98AE29CF3A28}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {486B0701-5E4E-445A-B5CD-6E5DE7DB006A}
 	EndGlobalSection
 EndGlobal

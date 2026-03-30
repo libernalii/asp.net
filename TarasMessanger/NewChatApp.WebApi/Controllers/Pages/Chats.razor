@@ -1,0 +1,38 @@
+﻿@page "/chats"
+
+@using NewChatApp.Application.Services.Chats
+@using NewChatApp.Core.Models.Chats
+@inject ChatsService ChatsService
+@inject NavigationManager Nav
+
+<h3>Мої чати</h3>
+
+@if (chats == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @foreach (var chat in chats)
+    {
+        <div style="border:1px solid gray; padding:10px; margin:5px"
+             @onclick="() => OpenChat(chat.Id)">
+
+            Chat: @chat.Id
+        </div>
+    }
+}
+
+@code {
+    private ChatBase[] chats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        chats = await ChatsService.GetMyChats();
+    }
+
+    void OpenChat(Guid chatId)
+    {
+        Nav.NavigateTo($"/page/{chatId}");
+    }
+}

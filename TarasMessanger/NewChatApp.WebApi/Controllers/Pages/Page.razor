@@ -1,0 +1,32 @@
+﻿@page "/page/{chatId:guid}"
+@using NewChatApp.Application.Services.ChatMessages
+@using NewChatApp.Core.Models.ChatMessages
+
+@inject ChatMessagesService MessagesService
+
+<h3>Чат</h3>
+
+@if (messages == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    @foreach (var msg in messages)
+    {
+        <div style="border-bottom:1px solid lightgray">
+            @msg.Content
+        </div>
+    }
+}
+
+@code {
+    [Parameter] public Guid chatId { get; set; }
+
+    private ChatMessageBase[] messages;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        messages = await MessagesService.GetMessages(chatId);
+    }
+}

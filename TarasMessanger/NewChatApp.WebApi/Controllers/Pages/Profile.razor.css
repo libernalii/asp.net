@@ -1,0 +1,25 @@
+﻿body {
+}
+
+.profile {
+    max-width: 800px;
+    margin: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.posts {
+    margin-top: 30px;
+}
+
+.empty {
+    height: 200px;
+    background: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

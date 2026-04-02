@@ -5,18 +5,20 @@ namespace NewChatApp.Application.Services.Chats;
 
 public class ChatsService
 {
-    private readonly IChatsRepository _repository;
+    private readonly IChatsRepository _repo;
 
-    public ChatsService(IChatsRepository repository)
+    public ChatsService(IChatsRepository repo)
     {
-        _repository = repository;
+        _repo = repo;
     }
 
-    public async Task<ChatBase[]> GetMyChats()
+    public Task<List<ChatBase>> GetUserChats(Guid userId)
     {
-        // просто тестовий userId
-        var userId = Guid.Parse("11111111-1111-1111-1111-111111111111");
+        return _repo.GetUserChats(userId);
+    }
 
-        return await _repository.GetAll(userId, 20, 0);
+    public Task<ChatBase> GetById(Guid chatId)
+    {
+        return _repo.GetById(chatId);
     }
 }

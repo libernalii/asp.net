@@ -1,0 +1,26 @@
+﻿@page "/search"
+@using NewChatApp.Application.Services.Users
+@using NewChatApp.Core.Abstractions
+@inject UsersService UsersService
+
+<input @bind="query" placeholder="Search users..." />
+<button @onclick="Search">Search</button>
+
+@if (users != null)
+{
+    foreach (var u in users)
+    {
+        <div>@u.Nickname (@u.Email)</div>
+    }
+}
+
+@code {
+    string query;
+    List<UserDto> users;
+
+    async Task MySearch()
+    {
+        var res = await UsersService.Search(new SearchOptions { SearchText = query });
+        users = res.Value.Items.ToList();
+    }
+}

@@ -5,15 +5,33 @@ namespace NewChatApp.Application.Services.ChatMessages;
 
 public class ChatMessagesService
 {
-    private readonly IChatMessagesRepository _repository;
+    private readonly IChatMessagesRepository _repo;
+    private readonly IUnitOfWork _uow;
 
-    public ChatMessagesService(IChatMessagesRepository repository)
+    public ChatMessagesService(IChatMessagesRepository repo, IUnitOfWork uow)
     {
-        _repository = repository;
+        _repo = repo;
+        _uow = uow;
     }
 
-    public async Task<ChatMessageBase[]> GetMessages(Guid chatId)
+    public async Task<List<ChatMessageBase>> GetMessages(Guid chatId)
     {
-        return await _repository.Get(chatId, 50, 0);
+        return await _repo.GetByChat(chatId);
+    }
+
+    public async Task SendText(Guid chatId, Guid userId, string text)
+    {
+        var msg = new TextChatMessage
+        {
+            Id = Guid.NewGuid(),
+            ChatId = chatId,
+            SenderId = userId,
+            Content = text,
+            SendAt = DateTime.UtcNow,
+            Status = ChatMessageStatus.Sent
+        };
+
+        await _repo.Add(msg);
+        _uow.Commit();
     }
 }

@@ -1,0 +1,53 @@
+﻿@page "/chats/{UserId:guid}"
+@using NewChatApp.Application.Services.ChatMessages
+@using NewChatApp.Application.Services.Chats
+@using NewChatApp.Core.Models.Chats
+@inject ChatsService ChatsService
+@inject ChatMessagesService MessagesService
+@inject NavigationManager Nav
+
+@if (chats == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    foreach (var chat in chats)
+    {
+        <div class="chat" @onclick="() => Open(chat.Id)">
+            <b>@GetName(chat)</b>
+            <p>@GetLastMessage(chat.Id)</p>
+        </div>
+    }
+}
+
+@code {
+    [Parameter] public Guid UserId { get; set; }
+
+    List<ChatBase> chats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        chats = await ChatsService.GetUserChats(UserId);
+    }
+
+    string GetName(ChatBase chat)
+    {
+        return chat switch
+        {
+            GroupChatBase g => g.Name,
+            _ => "Private Chat"
+        };
+    }
+
+    string GetLastMessage(Guid chatId)
+    {
+        var msg = MessagesService.GetMessages(chatId).Result.LastOrDefault();
+        return msg?.Content ?? "No messages";
+    }
+
+    void Open(Guid id)
+    {
+        Nav.NavigateTo($"/chat/{id}");
+    }
+}

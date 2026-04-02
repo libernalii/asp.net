@@ -133,4 +133,46 @@ public class ChatMessagesRepository : RepositoryBase<ChatMessageEntity>, IChatMe
             }
         };
     }
+
+    public async Task<List<ChatMessageBase>> GetByChat(Guid chatId)
+    {
+        var sql = @"
+        SELECT * FROM chat_messages
+        WHERE chat_id = @chatId
+        ORDER BY send_at DESC";
+
+        var entities = await SelectWithRetry<ChatMessageEntity, object>(sql, new { chatId });
+
+        var messages = entities.Select(MapToDomain).ToList();
+
+        var fileMessages = messages.OfType<FileChatMessage>().ToList();
+
+        if (fileMessages.Any())
+        {
+            var ids = fileMessages.Select(x => x.Id).ToArray();
+
+            var filesSql = @"
+            SELECT * FROM chat_message_files
+            WHERE message_id = ANY(@ids)";
+
+            var files = await SelectWithRetry<dynamic, object>(filesSql, new { ids });
+
+            foreach (var file in files)
+            {
+                var msg = fileMessages.FirstOrDefault(x => x.Id == file.message_id);
+
+                if (msg != null)
+                {
+                    msg.Files.Add(new FileItem
+                    {
+                        FileName = file.file_name,
+                        FilePath = file.file_path,
+                        Size = file.size
+                    });
+                }
+            }
+        }
+
+        return messages;
+    }
 }

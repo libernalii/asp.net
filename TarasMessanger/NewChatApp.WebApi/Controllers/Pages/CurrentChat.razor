@@ -1,0 +1,52 @@
+﻿@page "/chat/{ChatId:guid}"
+@inject ChatMessagesService MessagesService
+
+<div class="chat">
+    <div class="messages">
+        @foreach (var m in messages)
+        {
+            <div class="msg">
+                <b>@m.SenderId</b>
+                <p>@m.Content</p>
+
+                @if (m is FileChatMessage fileMsg)
+                {
+                    foreach (var f in fileMsg.Files)
+                    {
+                        <div>@f.FileName</div>
+                    }
+                }
+
+                @if (m is PictureChatMessage pic)
+                {
+                    foreach (var p in pic.PictureItems)
+                    {
+                        <img src="@p.PictureSourcePath" width="100" />
+                    }
+                }
+            </div>
+        }
+    </div>
+
+    <input @bind="text" />
+    <button @onclick="Send">Send</button>
+</div>
+
+@code {
+    [Parameter] public Guid ChatId { get; set; }
+
+    List<ChatMessageBase> messages = new();
+    string text;
+
+    protected override async Task OnInitializedAsync()
+    {
+        messages = await MessagesService.GetMessages(ChatId);
+    }
+
+    async Task Send()
+    {
+        await MessagesService.SendText(ChatId, Guid.Empty, text);
+        messages = await MessagesService.GetMessages(ChatId);
+        text = "";
+    }
+}

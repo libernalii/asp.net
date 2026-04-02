@@ -1,0 +1,45 @@
+﻿@page "/profile/{UserId:guid}"
+@using NewChatApp.Application.Services.Users
+@using NewChatApp.Core.Abstractions
+@inject UsersService UsersService
+@inject NavigationManager Nav
+
+@if (user == null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="profile">
+        <div class="header">
+            <div>
+                <h2>@user.Nickname</h2>
+                <p>@user.Email</p>
+            </div>
+
+            <button @onclick="GoToChats">💬</button>
+        </div>
+
+        <div class="posts">
+            <h4>Posts</h4>
+            <div class="empty">No posts yet</div>
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter] public Guid UserId { get; set; }
+
+    private UserDto user;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await UsersService.Search(new SearchOptions { Limit = 10, Offset = 1 });
+        user = result.Value.Items.FirstOrDefault(x => x.Id == UserId);
+    }
+
+    void GoToChats()
+    {
+        Nav.NavigateTo($"/chats/{UserId}");
+    }
+}

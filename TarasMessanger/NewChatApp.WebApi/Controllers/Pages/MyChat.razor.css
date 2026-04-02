@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.chat {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+    .chat:hover {
+        background: #f5f5f5;
+    }

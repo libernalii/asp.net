@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.4.11620.152 stable
+VisualStudioVersion = 18.4.11620.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TarasMessanger.Web", "TarasMessanger.Web\TarasMessanger.Web.csproj", "{2DFCA0BD-B76B-4546-AEDE-73D4F985BD04}"
 EndProject
